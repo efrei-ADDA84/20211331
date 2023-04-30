@@ -1,0 +1,27 @@
+name: Build & Push de l'image Docker # nom du workflow GitHub Actions
+
+on:
+  push: # déclenche le workflow lors d'un push sur la branche main
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest # exécute le workflow sur une machine virtuelle Ubuntu
+
+    steps:
+      - name: Checkout code # étape pour cloner le code du repo
+        uses: actions/checkout@v2
+
+      - name: Login sur DockerHub # étape pour se connecter à DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }} # utilise le nom d'utilisateur DockerHub stocké dans les secrets du repo
+          password: ${{ secrets.DOCKER_PASSWORD }} # utilise le mot de passe DockerHub stocké dans les secrets du repo
+
+      - name: Build & Push de l'image Docker # étape pour construire et pousser l'image Docker
+        uses: docker/build-push-action@v2
+        with:
+          context: . # utilise le dossier courant comme contexte pour la construction de l'image
+          push: true # pousse l'image vers DockerHub
+          tags: username/20211331_tp2:latest # tag l'image avec "latest"
