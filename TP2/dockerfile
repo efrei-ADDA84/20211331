@@ -1,0 +1,8 @@
+FROM python:3.9
+COPY openweather_api.py /app/
+COPY .env /app/
+WORKDIR /app
+RUN pip install requests
+RUN pip install flask
+RUN pip install --upgrade python-dotenv
+CMD ["python", "openweather_api.py"]
