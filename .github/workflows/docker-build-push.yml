@@ -24,4 +24,4 @@ jobs:
         with:
           context: . # utilise le dossier courant comme contexte pour la construction de l'image
           push: true # pousse l'image vers DockerHub
-          tags: username/20211331_tp2:latest # tag l'image avec "latest"
+          tags: maisieph/20211331_tp2:latest # tag l'image avec "latest"
