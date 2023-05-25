@@ -35,5 +35,5 @@ jobs:
             registry-password: ${{ secrets.REGISTRY_PASSWORD }}
             name: 20211331
             location: 'germany west central'
-            ports: 80
+            ports: 8081
             secure-environment-variables: OPENWEATHER_API_KEY=${{ secrets.API_KEY }}
