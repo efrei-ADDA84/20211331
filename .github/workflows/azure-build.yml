@@ -34,6 +34,6 @@ jobs:
             registry-username: ${{ secrets.REGISTRY_USERNAME }}
             registry-password: ${{ secrets.REGISTRY_PASSWORD }}
             name: 20211331
-            location: 'france central'
+            location: 'germany west central'
             ports: 8081
             secure-environment-variables: API_KEY=${{ secrets.API_KEY }}
