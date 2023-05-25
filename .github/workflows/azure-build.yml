@@ -36,4 +36,4 @@ jobs:
             name: 20211331
             location: 'germany west central'
             ports: 8081
-            secure-environment-variables: API_KEY=${{ secrets.API_KEY }}
+            secure-environment-variables: OPENWEATHER_API_KEY=${{ secrets.API_KEY }}
